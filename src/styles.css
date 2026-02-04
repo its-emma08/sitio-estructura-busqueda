@@ -218,3 +218,57 @@ a {
 }
 
 /* Animations will be handled by anime.js on components */
+
+/* --- ADVANCED FX: NEON & GLASS --- */
+
+/* 1. Neon Glow Effect */
+.neon-hover {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.neon-hover:hover {
+  border-color: var(--color-primary);
+  box-shadow:
+    0 0 0 1px var(--color-primary),
+    0 0 20px rgba(215, 38, 56, 0.3),
+    0 0 40px rgba(215, 38, 56, 0.1);
+  z-index: 10;
+}
+
+/* 2. Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  /* Extremely subtle in dark mode */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .glass-panel {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 3. Magnetic Button Effect (Structure) */
+.btn-magnetic {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Applying Effects to Existing Components */
+.canvas-card {
+  /* Inherit Neon behavior */
+  @extend .neon-hover;
+  /* Note: Pure CSS doesn't support @extend, avoiding specific syntax issues, manual apply below */
+}
+
+/* Apply manually to valid CSS */
+.canvas-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--color-primary);
+  box-shadow:
+    0 10px 40px -10px rgba(0, 0, 0, 0.5),
+    0 0 0 1px var(--color-primary),
+    /* Sharp neon edge */
+    0 0 15px rgba(215, 38, 56, 0.4);
+  /* Glow */
+}

@@ -10,6 +10,13 @@ declare var anime: any;
   styleUrl: './menu.css',
 })
 export class Menu implements AfterViewInit {
+  // Playground State
+  isMockMenuOpen = false;
+
+  toggleMockMenu() {
+    this.isMockMenuOpen = !this.isMockMenuOpen;
+  }
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngAfterViewInit() {

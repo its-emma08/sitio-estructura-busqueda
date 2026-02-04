@@ -89,73 +89,165 @@
   line-height: 1.5;
 }
 
-/* Browser Mockup */
+/* Browser Mockup Interactive */
 .browser-mockup {
   background: var(--color-bg-white);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
-  box-shadow: none;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .browser-header {
-  background: rgba(0, 0, 0, 0.05);
-  /* Subtle dark header */
-  padding: 10px 15px;
+  background: #1a1a1a;
+  padding: 12px 15px;
   display: flex;
-  gap: 6px;
-  border-bottom: 1px solid var(--color-border);
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #333;
 }
 
-/* ... dots ... */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.red {
+  background: #ff5f56;
+}
+
+.dot.yellow {
+  background: #ffbd2e;
+}
+
+.dot.green {
+  background: #27c93f;
+}
+
+.url-bar {
+  background: #000;
+  color: #555;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-left: 10px;
+  flex-grow: 1;
+  font-family: monospace;
+}
 
 .browser-body {
-  padding: 20px;
-  background: var(--color-bg);
-  /* Use page bg, slightly distinct */
-  min-height: 200px;
+  padding: 0;
+  /* Reset */
+  background: #121212;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Mock Nav */
 .mock-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--color-bg-white);
-  padding: 10px 15px;
-  border-radius: 4px;
-  border: 1px solid var(--color-border);
-  box-shadow: none;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 20;
 }
 
 .mock-brand {
-  width: 30px;
-  height: 30px;
-  background: var(--color-primary);
-  border-radius: 4px;
+  font-weight: bold;
+  color: #fff;
+  font-family: monospace;
 }
 
-.mock-links {
+.mock-links.desktop-only {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
-.link {
-  width: 40px;
-  height: 8px;
-  background: #e0e0e0;
-  border-radius: 4px;
+.link-item {
+  color: #aaa;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
 
-.caption {
-  margin-top: 20px;
+.link-item:hover {
+  color: var(--color-primary);
+}
+
+/* Mock Hamburger */
+.mock-hamburger {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  z-index: 30;
+}
+
+.mock-hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+/* Hamburger Animation */
+.mock-hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mock-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mock-hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* Mobile Menu Overlay */
+.mock-mobile-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transform: translateY(-100%);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 10;
+}
+
+.mock-mobile-menu.open {
+  transform: translateY(0);
+}
+
+.mock-mobile-menu .link-item {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.mock-content-placeholder {
+  padding: 40px;
   text-align: center;
-  font-style: italic;
-  color: var(--color-text-light);
-  font-size: 0.9rem;
+  color: #444;
 }
 
-@media (max-width: 800px) {
-  .menu-layout {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .mock-links.desktop-only {
+    display: none;
   }
 }

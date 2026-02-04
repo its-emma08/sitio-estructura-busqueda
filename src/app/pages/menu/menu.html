@@ -51,21 +51,49 @@
     </div>
 
     <!-- Visual Example -->
+    <!-- Visual Example: Interactive Playground -->
     <div class="menu-visual-context">
-      <div class="browser-mockup">
+      <div class="browser-mockup glass-panel">
         <div class="browser-header">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="url-bar">example.com/nav</span>
         </div>
         <div class="browser-body">
+
+          <!-- Mock Nav Bar -->
           <div class="mock-nav">
-            <span class="mock-brand"></span>
-            <div class="mock-links">
-              <span class="link"></span><span class="link"></span><span class="link"></span>
+            <span class="mock-brand">Logo</span>
+
+            <!-- Desktop Links (Hidden on Mobile State) -->
+            <div class="mock-links desktop-only">
+              <span class="link-item">Inicio</span>
+              <span class="link-item">Servicios</span>
+              <span class="link-item">Contacto</span>
+            </div>
+
+            <!-- Hamburger Icon (Clickable) -->
+            <div class="mock-hamburger" (click)="toggleMockMenu()" [class.active]="isMockMenuOpen">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
+
+          <!-- Mock Mobile Menu Overlay -->
+          <div class="mock-mobile-menu" [class.open]="isMockMenuOpen">
+            <span class="link-item">Inicio</span>
+            <span class="link-item">Servicios</span>
+            <span class="link-item">Contacto</span>
+          </div>
+
+          <div class="mock-content-placeholder">
+            <h1>Haz clic en la hamburguesa 🍔</h1>
+            <p>Simulación de comportamiento responsivo.</p>
+          </div>
+
         </div>
       </div>
-      <p class="caption">La navegación debe ser intuitiva y predecible.</p>
+      <p class="caption">Prueba interactiva: Toca el icono de menú para ver el despliegue.</p>
     </div>
   </div>
 
