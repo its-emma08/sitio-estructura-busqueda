@@ -1,0 +1,119 @@
+<div class="inicio-container">
+
+  <!-- Sakura Background -->
+  <div class="sakura-container"></div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <!-- Parallax Layers (Hidden per request but structure kept for potential future use) -->
+    <div class="parallax-wrapper">
+      <div class="parallax-layer layer-sky"></div>
+      <div class="parallax-layer layer-mountain"></div>
+      <div class="parallax-layer layer-fore"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <h1 class="hero-title">Fundamentos de Arquitectura Web</h1>
+      <p class="hero-subtitle">
+        Diseño de sistemas escalables, semántica estructurada y patrones de navegación avanzados.
+      </p>
+      <button class="btn btn-primary" (click)="scrollToGrid()">
+        Explorar Arquitectura
+      </button>
+    </div>
+  </section>
+
+  <!-- Scroll Anchor -->
+  <div id="grid-start"></div>
+
+  <!-- Main Content Wrapper -->
+  <div class="main-wrapper">
+
+    <!-- Strict Grid Layout -->
+    <section class="architecture-grid">
+
+      <!-- Card 1 -->
+      <a routerLink="/elementos" class="canvas-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+            <path d="M3 9h18"></path>
+          </svg>
+        </div>
+        <div class="card-content">
+          <h3>Estructura Semántica</h3>
+          <p>Definición rigurosa de Header, Main y Footer bajo estándares HTML5.</p>
+        </div>
+        <div class="card-action">
+          <span>Explorar</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a routerLink="/menu" class="canvas-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"></path>
+          </svg>
+        </div>
+        <div class="card-content">
+          <h3>Sistemas de Navegación</h3>
+          <p>Patrones de UI para menús globales, responsivos y jerarquías.</p>
+        </div>
+        <div class="card-action">
+          <span>Explorar</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a routerLink="/breadcrumbs" class="canvas-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+        <div class="card-content">
+          <h3>Breadcrumbs</h3>
+          <p>Rastros de migas de pan para orientación profunda y UX mejorada.</p>
+        </div>
+        <div class="card-action">
+          <span>Explorar</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a routerLink="/mapa-sitio" class="canvas-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </div>
+        <div class="card-content">
+          <h3>Arquitectura de Nodos</h3>
+          <p>Visualización esquemática del flujo de datos y mapa del sitio.</p>
+        </div>
+        <div class="card-action">
+          <span>Explorar</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </div>
+      </a>
+
+    </section>
+  </div>
+</div>

@@ -1,1 +1,220 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles - Obsidian Ink Theme */
+:root {
+  /* Palette - Light (Washi) */
+  --color-primary: #D72638;
+  /* Crimson */
+  --color-secondary: #2C3E50;
+  /* Ink */
+  --color-accent: #D72638;
+  /* Crimson Accent */
+
+  --color-bg-body: #F9F9F9;
+  /* Washi White */
+  --color-bg-white: #ffffff;
+  --color-text: #2C3E50;
+  --color-text-light: #5f6c7b;
+  --color-border: #E0E0E0;
+
+  --header-height: 70px;
+  --color-bg: #F9F9F9;
+
+  /* Shadows - Premium Diffuse */
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 12px 24px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 30px 60px rgba(0, 0, 0, 0.08);
+
+  /* Typography */
+  --font-heading: 'Noto Serif JP', serif;
+  --font-primary: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+
+  /* Texture */
+  --bg-texture: url('assets/images/grain_texture.png');
+  /* Mappings for strict user CSS compliance */
+  --card-bg-color: var(--color-bg-white);
+  --border-color-subtle: var(--color-border);
+}
+
+body.dark-theme {
+  /* Dark Theme ("Obsidian Ink") */
+  --color-primary: #FF4D6D;
+  /* Vibrant Pink/Red */
+  --color-secondary: #D1D1D1;
+  /* Silk Gray */
+  --color-accent: #FF4D6D;
+
+  --color-bg-white: #121212;
+  /* Harmonized with BG */
+  /* Dark Obsidian Card */
+  --color-bg: #121212;
+  /* Deep Obsidian Bg */
+
+  --color-text: #E0E0E0;
+  /* Soft White */
+  --color-text-light: #A0AAB5;
+  --color-border: #333333;
+  /* Subtle Border */
+
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 12px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 30px 60px rgba(0, 0, 0, 0.7);
+
+  /* Mappings for strict user CSS compliance */
+  --card-bg-color: var(--color-bg-white);
+  --border-color-subtle: var(--color-border);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s ease, color 0.4s ease;
+
+  /* Texture Overlay */
+  background-image: var(--bg-texture);
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+  /* Blends texture with bg color */
+  background-attachment: fixed;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  color: var(--color-secondary);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  border-left: 4px solid var(--color-primary);
+  padding-left: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 35px;
+  border-radius: 2px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: transparent;
+  color: var(--color-primary);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: var(--color-primary);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: -1;
+}
+
+.btn:hover {
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.btn:hover::after {
+  height: 100%;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-primary::after {
+  background-color: var(--color-secondary);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Global Utility: Canvas Card --- */
+/* Strict standardization for all "white boxes" */
+/* --- Global Utility: Canvas Card --- */
+/* Strict standardization for all "white boxes" */
+.canvas-card {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  /* Smoke border */
+  border-left: 4px solid var(--color-primary);
+  /* Crimson Accent */
+  border-radius: 12px;
+  /* User mandated 12px */
+  /* Minimalist radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  /* Subtle lift */
+  padding: 30px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  height: auto !important;
+  /* User mandated */
+  width: 100% !important;
+  /* User mandated */
+  aspect-ratio: 4 / 5;
+  /* User mandated */
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: var(--color-primary);
+}
+
+/* Animations will be handled by anime.js on components */

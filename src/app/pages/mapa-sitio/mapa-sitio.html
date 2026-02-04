@@ -1,0 +1,99 @@
+<div class="sitemap-container">
+
+    <header class="page-header">
+        <h1 class="page-title">Mapa de Arquitectura</h1>
+        <div class="title-divider"></div>
+        <p class="page-intro">
+            Representación visual de la jerarquía de nodos y relaciones estructurales del sitio.
+        </p>
+    </header>
+
+    <div class="sitemap-visual-container">
+
+        <div class="sitemap-tree">
+
+            <!-- Root Node -->
+            <div class="tree-level level-1">
+                <div class="tree-node root-node">
+                    <span class="node-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </span>
+                    <span class="node-label">Inicio</span>
+                </div>
+            </div>
+
+            <!-- Connector Vertical -->
+            <div class="connector-network"></div>
+
+            <!-- Level 2 Nodes -->
+            <div class="tree-level level-2">
+
+                <a routerLink="/elementos" class="tree-node interactive-node">
+                    <span class="node-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </span>
+                    <span class="node-label">Elementos</span>
+                </a>
+
+                <a routerLink="/menu" class="tree-node interactive-node">
+                    <span class="node-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </span>
+                    <span class="node-label">Menús</span>
+                </a>
+
+                <a routerLink="/breadcrumbs" class="tree-node interactive-node">
+                    <span class="node-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </span>
+                    <span class="node-label">Rutas</span>
+                </a>
+
+                <a routerLink="/mapa-sitio" class="tree-node interactive-node current-node">
+                    <span class="node-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                    </span>
+                    <span class="node-label">Mapa</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <h3>Sitemap HTML</h3>
+            <p>Estructura visible para el usuario. Facilita la navegación rápida y el entendimiento de la jerarquía.</p>
+        </div>
+        <div class="info-card">
+            <h3>Sitemap XML</h3>
+            <p>Archivo técnico para motores de búsqueda. Lista todas las URLs indexables del dominio.</p>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,192 @@
+/* COMPLETA REESCRITURA DE INICIO.CSS */
+
+/* 1. Contenedor Base */
+.inicio-container {
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  min-height: 100vh;
+}
+
+/* 2. Hero Section Refinado */
+.hero-section {
+  position: relative;
+  height: 70vh;
+  /* Altura controlada */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Fondo técnico sutil */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+  z-index: 10;
+  /* Fondo semitransparente para legibilidad */
+  background: rgba(18, 18, 18, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.hero-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 3rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+}
+
+/* 3. Main Wrapper Constraint */
+.main-wrapper {
+  max-width: 1200px;
+  /* Límite estricto */
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* 4. Architecture Grid System */
+.architecture-grid {
+  display: grid;
+  /* Columnas fijas entre 280px y 320px, ajuste automático */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  justify-content: center;
+  /* Centrado horizontal */
+  gap: 3rem;
+  /* Espaciado generoso */
+  padding: 4rem 0 8rem;
+}
+
+/* 5. Canvas Card Overrides - ESPECIFICOS PARA INICIO */
+.architecture-grid .canvas-card {
+  /* Dimensiones Fijas para Uniformidad */
+  width: 100%;
+  /* Ocupa el ancho de la columna del grid */
+  max-width: 320px;
+  /* Seguridad extra */
+  height: 400px;
+  /* Altura fija */
+
+  /* Flex Layout Interno */
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+
+  /* Estilos Visuales */
+  background-color: var(--card-bg-color, #ffffff);
+  border: 1px solid var(--border-color-subtle, #e0e0e0);
+  border-left: 4px solid #D72638;
+  /* Acento Rojo */
+  border-radius: 12px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  /* Quitar subrayado de enlaces */
+}
+
+/* Hover Effects */
+.architecture-grid .canvas-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: #D72638;
+}
+
+/* Iconos - RESTRICCION CRITICA */
+.card-icon {
+  margin-bottom: 1.5rem;
+  color: #D72638;
+  display: flex;
+  /* Evita que el SVG se expanda */
+  align-items: center;
+}
+
+.card-icon svg {
+  width: 48px;
+  /* Tamaño fijo */
+  height: 48px;
+  /* Tamaño fijo */
+  min-width: 48px;
+  stroke-width: 1.5px;
+  transition: transform 0.3s ease;
+}
+
+.architecture-grid .canvas-card:hover .card-icon svg {
+  transform: scale(1.1);
+}
+
+/* Contenido de Texto */
+.card-content {
+  flex-grow: 1;
+  /* Empuja la acción hacia abajo */
+}
+
+.card-content h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* Action Link */
+.card-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #D72638;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.card-action svg {
+  width: 20px;
+  height: 20px;
+}
+
+.architecture-grid .canvas-card:hover .card-action {
+  opacity: 1;
+}
+
+/* Sakura (Fondo) */
+.sakura-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Parallax Layers (Hidden) */
+.parallax-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}

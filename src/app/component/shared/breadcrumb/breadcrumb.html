@@ -1,0 +1,15 @@
+<nav class="breadcrumb-container" aria-label="breadcrumb">
+  <div class="timeline-track">
+    <div *ngFor="let crumb of crumbs; let last = last" class="crumb-item" [class.active]="last">
+      <!-- Dot -->
+      <span class="crumb-dot"></span>
+
+      <!-- Link or Text -->
+      <a *ngIf="!last" [routerLink]="crumb.url" class="crumb-link">{{ crumb.label }}</a>
+      <span *ngIf="last" class="crumb-link">{{ crumb.label }}</span>
+
+      <!-- Connecting Line (Separator) -->
+      <div *ngIf="!last" class="crumb-separator"></div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,258 @@
+/* Existing Styles (assumed) + Updates */
+.sitemap-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px 60px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-family: var(--font-heading);
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+
+.title-divider {
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary);
+    margin: 0 auto 30px;
+    border-radius: 2px;
+}
+
+.page-intro {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+}
+
+.sitemap-visual-container {
+    padding: 80px 0;
+    margin-bottom: 60px;
+    position: relative;
+    /* Blueprint Grid */
+    background-image:
+        linear-gradient(rgba(215, 38, 56, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(215, 38, 56, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+}
+
+.sitemap-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 20px;
+}
+
+/* --- ROOT NODE --- */
+.tree-node.root-node {
+    width: 140px;
+    height: 140px;
+    border: 3px solid #D72638;
+    /* Crimson Accent */
+    box-shadow: 0 0 30px rgba(215, 38, 56, 0.2);
+    z-index: 20;
+    margin-bottom: 0;
+}
+
+.tree-node.root-node .node-icon {
+    width: 60px !important;
+    height: 60px !important;
+}
+
+/* --- CONNECTORS (The "Tree") --- */
+
+/* 1. Vertical Spine from Root */
+.connector-network {
+    width: 2px;
+    height: 50px;
+    background-color: var(--color-border);
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 2. Horizontal Connector Bar (The Cross) */
+.tree-level.level-2 {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    /* Space between nodes */
+    position: relative;
+    padding-top: 50px;
+    /* Space for vertical drops */
+}
+
+/* The Horizontal Line spanning children */
+.tree-level.level-2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    /* Offset to avoid overshooting first node */
+    right: 50px;
+    /* Offset to avoid overshooting last node */
+    height: 2px;
+    background-color: var(--color-border);
+}
+
+/* 3. Vertical Drops to each Child */
+.interactive-node::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    /* Connect up to horizontal line */
+    left: 50%;
+    width: 2px;
+    height: 50px;
+    background-color: var(--color-border);
+    transform: translateX(-50%);
+}
+
+/* 4. Connect Spine to Horizontal Bar */
+.connector-network::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    /* Slight overlap */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-border);
+    border-radius: 50%;
+    /* Joint Point */
+}
+
+/* Connectors - SVG Lines Concept (CSS Implementation) */
+/* Connectors - SVG Lines Concept (CSS Implementation) */
+/* Vertical Spine */
+.connector-network {
+    width: 2px;
+    height: 40px;
+    background-color: var(--color-border);
+    /* Visible Solid Line */
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Horizontal Connector if needed, usually handled by flex gap */
+
+.tree-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    padding: 20px;
+    border-radius: 50%;
+    /* CIRCULAR NODES */
+    position: relative;
+    z-index: 10;
+    width: 120px;
+    height: 120px;
+    /* Fixed circular size */
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle border initially */
+}
+
+/* Hover Glow Effect */
+.tree-node:hover {
+    box-shadow: 0 0 20px rgba(215, 38, 56, 0.6);
+    /* Crimson Glow */
+    border-color: var(--color-primary);
+    background: rgba(215, 38, 56, 0.05);
+    transform: translateY(-5px);
+}
+
+/* Inner Icon Alignment */
+.tree-node .node-icon {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: var(--color-secondary);
+    margin-bottom: 5px;
+}
+
+/* Current Node Indicator */
+.current-node .node-icon {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px rgba(215, 38, 56, 0.2);
+}
+
+/* ... */
+
+/* .info-card replaced by .canvas-card */
+.info-card h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+    color: var(--color-secondary);
+}
+
+.info-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+
+/* ROOT NODE Special emphasis */
+.tree-node.root-node {
+    width: 140px;
+    /* Larger than standard 120px */
+    height: 140px;
+    border: 3px solid #D72638;
+    /* Crimson Accent Border */
+    box-shadow: 0 0 25px rgba(215, 38, 56, 0.15);
+}
+
+.tree-node.root-node .node-icon {
+    width: 60px;
+    height: 60px;
+}
+
+/* Connectors */
+.connector-network {
+    width: 2px;
+    height: 60px;
+    background-color: var(--color-border);
+    margin: 0 auto;
+    position: relative;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tree-level.level-2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .connector-network {
+        display: none;
+    }
+}

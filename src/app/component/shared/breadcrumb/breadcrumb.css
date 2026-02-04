@@ -1,0 +1,62 @@
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  padding: 10px 0;
+}
+
+.timeline-track {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.crumb-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.crumb-item:hover,
+.crumb-item.active {
+  opacity: 1;
+}
+
+.crumb-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-border);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.crumb-item:hover .crumb-dot,
+.crumb-item.active .crumb-dot {
+  background-color: var(--color-primary);
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(215, 38, 56, 0.4);
+}
+
+.crumb-link {
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.crumb-separator {
+  height: 1px;
+  width: 30px;
+  background-color: var(--color-border);
+}
+
+.crumb-item.active .crumb-link {
+  color: var(--color-primary);
+  font-weight: 700;
+}

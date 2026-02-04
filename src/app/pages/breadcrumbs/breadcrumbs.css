@@ -1,0 +1,239 @@
+/* Existing Styles ... */
+.breadcrumbs-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 20px 120px;
+  animation: fadeUp 0.8s ease-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-secondary);
+}
+
+.title-divider {
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin: 15px auto 20px;
+}
+
+.page-intro {
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.concept-visual {
+  background: var(--color-bg-white);
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: none;
+  text-align: center;
+  margin-bottom: 60px;
+  border: 1px dashed var(--color-border);
+}
+
+.breadcrumb-demo-bar {
+  font-family: monospace;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.crumb.root {
+  color: var(--color-text-light);
+}
+
+.crumb.category {
+  color: var(--color-text-light);
+}
+
+.crumb.current {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.sep {
+  margin: 0 10px;
+  color: #ccc;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* .type-card replaced by .canvas-card */
+.type-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--color-secondary);
+}
+
+.type-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--color-secondary);
+}
+
+.type-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  margin-bottom: 15px;
+}
+
+.type-card code {
+  display: block;
+  background: rgba(44, 62, 80, 0.05);
+  padding: 10px;
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  border-radius: 4px;
+}
+
+/* Lab Styles */
+.lab-container {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: none;
+}
+
+.lab-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.lab-header h2 {
+  font-family: var(--font-heading);
+  color: var(--color-secondary);
+  font-size: 1.8rem;
+}
+
+.lab-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--color-secondary);
+}
+
+.lab-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  font-family: var(--font-primary);
+  background: rgba(255, 255, 255, 0.05);
+  /* Dark input background */
+  color: var(--color-secondary);
+}
+
+.lab-input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.preview-box {
+  background: rgba(0, 0, 0, 0.2);
+  /* Was #f9f9f9 */
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.breadcrumb-visual {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+}
+
+.crumb-text {
+  cursor: pointer;
+}
+
+.crumb-text:hover {
+  text-decoration: underline;
+}
+
+.crumb-text.active {
+  font-weight: 700;
+  color: var(--color-primary);
+  cursor: default;
+  text-decoration: none;
+}
+
+.separator {
+  margin: 0 10px;
+  color: #ccc;
+}
+
+.code-viewer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.code-block {
+  background: #1a1a1a;
+  /* Darker High Contrast */
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 20px;
+  color: #abb2bf;
+  font-family: monospace;
+  font-size: 0.85rem;
+  overflow-x: auto;
+}
+
+.code-label {
+  color: #61dafb;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+pre {
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .code-viewer {
+    grid-template-columns: 1fr;
+  }
+}
