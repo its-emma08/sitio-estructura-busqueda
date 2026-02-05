@@ -190,3 +190,29 @@
   height: 100%;
   pointer-events: none;
 }
+
+/* 9. Mobile Optimization (Audit Fix) */
+@media (max-width: 768px),
+(hover: none) {
+
+  /* Disable 3D transforms for battery saving / performance */
+  .parallax-wrapper,
+  .parallax-layer {
+    display: none !important;
+    /* Remove heavy layers */
+  }
+
+  .hero-section {
+    background-image:
+      linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8));
+    /* Simple dark bg */
+    height: auto;
+    min-height: 60vh;
+    padding: 40px 20px;
+  }
+
+  .sakura-container {
+    display: none;
+    /* Disable JS particles on mobile */
+  }
+}

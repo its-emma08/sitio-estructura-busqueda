@@ -10,6 +10,18 @@ declare var anime: any;
   styleUrl: './elementos-sitio.css',
 })
 export class ElementosSitio implements AfterViewInit {
+
+  // Interactive Diagram State
+  hoveredElement: string | null = null;
+
+  setHover(section: string) {
+    this.hoveredElement = section;
+  }
+
+  clearHover() {
+    this.hoveredElement = null;
+  }
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngAfterViewInit() {

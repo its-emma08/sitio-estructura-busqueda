@@ -1,8 +1,9 @@
-import { Component, AfterViewInit, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
-import { Router, RouterModule, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Component, AfterViewInit, ElementRef, ViewChild, Inject, PLATFORM_ID, inject } from '@angular/core';
+import { Router, RouterModule, RouterLink, RouterLinkActive, RouterOutlet, ChildrenOutletContexts } from '@angular/router';
 import { isPlatformBrowser, AsyncPipe, NgIf } from '@angular/common'; // AsyncPipe for observable
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../services/theme.service';
+import { fadeAnimation } from '../animations';
 
 declare var anime: any;
 
@@ -12,12 +13,15 @@ declare var anime: any;
   imports: [RouterLink, RouterLinkActive, RouterOutlet, FormsModule, AsyncPipe, NgIf],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
+  animations: [fadeAnimation]
 })
 export class Layout implements AfterViewInit {
 
   isMobileMenuOpen = false;
   searchQuery = ''; // For Header Input sync
   isDark$;
+
+  private contexts = inject(ChildrenOutletContexts);
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -44,11 +48,12 @@ export class Layout implements AfterViewInit {
   goToSearch() {
     if (this.searchQuery && this.searchQuery.trim().length > 0) {
       this.router.navigate(['/busqueda'], { queryParams: { q: this.searchQuery } });
-      // Optional: clear header input or keep it synced? 
-      // Keeping it allows user to refine, clearing it feels cleaner.
-      // Let's clear to avoid confusion if they navigate back.
       this.searchQuery = '';
     }
+  }
+
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }
 
   private animateHeader() {

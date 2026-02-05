@@ -1,85 +1,140 @@
+/* LAYOUT SPLIT */
 .elementos-container {
-  max-width: 1100px;
+  max-width: 1400px;
+  /* Wider for split */
   margin: 0 auto;
-  padding: 100px 20px 120px;
-  animation: fadeUp 0.8s ease-out;
+  padding: 40px 20px 120px;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 60px;
+  align-items: start;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.elements-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .page-header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.page-title {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  color: var(--color-secondary);
-  margin-bottom: 15px;
-}
-
-.title-divider {
-  width: 60px;
-  height: 3px;
-  background-color: var(--color-primary);
-  margin: 0 auto 20px;
-}
-
-.page-intro {
-  font-size: 1.1rem;
-  color: var(--color-text-light);
-  max-width: 600px;
-  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 60px;
 }
 
 .elements-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
+/* CARDS REFINEMENT */
 .element-card {
-  background: var(--color-bg-white);
-  /* Use global variable */
-  border: 1px solid var(--color-border);
-  /* Canvas Style */
-  border-radius: 2px;
-  /* Sharper */
-  box-shadow: none;
-  /* Removed shadow for flat canvas feel */
-  overflow: hidden;
-  transition: all 0.4s ease;
-  position: relative;
-  height: 100%;
+  cursor: default;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.element-card:hover {
-  transform: translateY(-5px);
+.element-card.active-hover {
   border-color: var(--color-primary);
-  box-shadow: var(--shadow-lg);
-  /* Only shadow on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateX(10px);
 }
 
-.card-border-top {
-  height: 4px;
-  background-color: var(--color-border);
-  transition: background-color 0.3s;
+/* STICKY DIAGRAM PANEL */
+.diagram-panel {
+  position: sticky;
+  top: 100px;
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  padding: 30px;
+  border-radius: 8px;
+  height: 600px;
 }
 
-.element-card:hover .card-border-top {
-  background-color: var(--color-primary);
+.diagram-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+/* WIREFRAME VISUALIZATION */
+.wireframe-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 500px;
+  border: 2px dashed #ddd;
+  padding: 15px;
+  background: #f9f9f9;
+}
+
+.wf-block {
+  border: 2px solid #ccc;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  color: #999;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.wf-header {
+  height: 60px;
+}
+
+.wf-main {
+  flex-grow: 1;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.wf-sidebar {
+  width: 30%;
+  border: 1px solid #eee;
+}
+
+.wf-content {
+  flex-grow: 1;
+  border: 1px solid #eee;
+}
+
+.wf-footer {
+  height: 60px;
+}
+
+/* ACTIVE STATES */
+.wf-header.active {
+  background: #fee2e2;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.wf-main.active .wf-content {
+  background: #e0f2fe;
+  border-color: #0284c7;
+  color: #0284c7;
+}
+
+/* Main highlights content area */
+.wf-footer.active {
+  background: #dcfce7;
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .elementos-container {
+    grid-template-columns: 1fr;
+  }
+
+  .diagram-panel {
+    display: none;
+    /* Hide on small screens */
+  }
 }
 
 .card-header {
